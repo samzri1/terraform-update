@@ -9,13 +9,13 @@ module "resource_group" {
 }
 
 module "networking" {
-  source       = "./networking"
-  resource_group_name = module.resource_group.name
+  source                 = "./networking"
+  network_resource_group_name = module.resource_group.name
 }
 
 module "virtual_machines" {
   source             = "./virtual_machines"
-  resource_group_name = module.resource_group.name
-  subnet_id          = module.networking.subnet_id
-  vm_count           = 3
+  vm_resource_group_name = module.resource_group.name
+  vm_subnet_id          = module.networking.subnet_id
+  num_vms               = 3
 }
