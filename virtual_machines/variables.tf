@@ -1,12 +1,12 @@
-variable "resource_group_name" {
+variable "vm_resource_group_name" {
   description = "Name of the resource group"
 }
 
-variable "subnet_id" {
+variable "vm_subnet_id" {
   description = "ID of the subnet"
 }
 
-variable "vm_count" {
+variable "num_vms" {
   description = "Number of virtual machines"
   default     = 3
 }
